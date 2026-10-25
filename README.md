@@ -1,4 +1,4 @@
-# Motion-Retargeting-on-a-human-hand-model
+# Motion-Retargeting-on-a-human-hand-model-from-Minimal-Inputs-through-Latent-Space-Learning
 
 Course: Medical Robotics
 
