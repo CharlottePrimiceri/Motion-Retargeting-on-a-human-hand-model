@@ -1,0 +1,12 @@
+Model: AE
+Latent Dimension: 15
+Epochs: 300
+Batch Size: 64
+Training Start Time: 2025-09-23 13:53:46
+Training End Time: 2025-09-23 13:57:26
+Training Duration: 0:03:40.579089
+Dataset: dataset/hand_dataset_all_fingers.csv
+Input Dimension: 62
+Best Test Loss: 1.79162473534592e-05
+Final Learning Rate: 1.5625e-05
+Model Save Path: my_ae_model_2.pth

@@ -136,7 +136,7 @@ def main():
     input_dim = Y.shape[1]
 
     Y_train, Y_test = train_test_split(Y, test_size=0.2, random_state=42)
-    train_loader = DataLoader(TensorDataset(torch.FloatTensor(Y_train)), batch_size=args.batch_size, shuffle=True)
+    train_loader = DataLoader(TensorDataset(torch.FloatTensor(Y_train)), batch_size=args.batch_size, shuffle=False)
     test_loader = DataLoader(TensorDataset(torch.FloatTensor(Y_test)), batch_size=args.batch_size)
 
     # Model selection
@@ -146,7 +146,7 @@ def main():
         model = HandPoseVAE(input_dim=input_dim, latent_dim=args.latent_dim)
 
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=10, factor=0.5, verbose=True)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=10, factor=0.5)
     loss_fn = nn.MSELoss()
 
     save_path = args.save_model or os.path.join(training_dir, f"HandPose{args.model}_{args.latent_dim}latent.pth")
